@@ -4,8 +4,8 @@
 
 // List URL's
     var homeHtml = "../HW5/snippet/Home.html";
-    var MenuHtml = "../HW5/snippet/Menu.html";
-    var DetailHtml = "../HW5/snippet/Detail.html";
+    var MenuHtml = "../HW5/snippet/menu.html";
+    var DetailHtml = "../HW5/snippet/detail.html";
 
 // inserting innerHTML for select
     var insertHtml = function (selector, html) {
