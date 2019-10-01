@@ -1,0 +1,81 @@
+<link rel="stylesheet" href="css/detail.css">
+<div class="main">
+
+    <div class = "items">
+        <p id="back" onclick="$dc.loadMenu()">BACK TO PRODUCT MENU >></p>
+        <h4>Blueberry Roll</h4>
+
+        <div class="roll">
+            <img src="css/img/2.jpg">
+            <div class="ingredient">
+                <h4>Ingredients</h4>
+                <p>Flour, sugar, egg, walnut, milk, cream</p>
+            </div>
+        </div>
+        <div class="description">
+            <p>Look at our signature blueberry roll!
+                The from-scratch breakfast sweet rolls that everyone craves.
+                Gooey homemade cinnamon rolls.
+                Our best recipe that we’ve been serving friends and family on
+                holidays and any other day for over 12 years.
+            </p>
+            <p>*** Our pack size varies from one, three, six, to twelve!</p>
+
+            <span> Price: <b>$3.95</b></span>
+            <div class="glazing">
+                <p>Glazing</p>
+                <div class="dropdown">
+                    <button onclick="gf()" class="drop">Choose Glazing</button>
+                    <div id="gmenu" class="dropdown-sub">
+                        <a>None</a>
+                        <a>Vanilla-Milk</a>
+                        <a>Sugar-Milk</a>
+                        <a>Double-Chocolate</a>
+                    </div>
+                </div>
+            </div>
+            <div class="count">
+                <p>Pack Size</p>
+                <div class="dropdown">
+                    <button onclick="cf()" class="drop">Choose Pack Size</button>
+                    <div id="cmenu" class="dropdown-sub">
+                        <a>1 roll</a>
+                        <a>3 rolls</a>
+                        <a>6 rolls</a>
+                        <a>12 rolls</a>
+                    </div>
+                </div>
+            </div>
+            <div id = "total">Total: <b></b><button onclick="addtocart()" class="bcart">Add to Cart</button></div>
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+
+    <div class="added">
+        <div class="confirmation">
+            <div class="left">
+                <div class="middle">
+                    <img src="css/img/2.jpg">
+                </div>
+            </div>
+            <div class="right">
+                <div class="middle">
+                    <div class="inner">
+                        <h4>BLUEBERRY ROLL</h4>
+                        <p id="detail"></p>
+                        <div class="check">
+                            <svg class="icon" width="40px" height="40px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M449.828571 657.554286L291.84 499.565714a54.857143 54.857143 0 0 0-77.531429 77.604572l180.955429 181.028571c4.388571 4.388571 9.362286 7.899429 14.628571 10.459429a54.857143 54.857143 0 0 0 80.530286 3.218285l336.237714-336.164571a54.857143 54.857143 0 0 0-77.531428-77.531429L449.828571 657.408zM512 1024A512 512 0 1 1 512 0a512 512 0 0 1 0 1024z" fill="#7DD44B" /></svg>
+                            <p>Added to Cart</p>
+                        </div>
+                        <div class="buttons">
+                            <button onclick="">View Cart</button>
+                            <button onclick="backtodetail()">Continue <br> Shopping</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+    </div>
+</div>
+

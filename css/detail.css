@@ -1,0 +1,362 @@
+/* -------------------------
+ * Menu items
+ * Content hover: FFF9F1;
+ *--------------------------*/
+
+
+/*------------------
+ *      Main
+ *------------------*/
+
+/*-----left-----*/
+.main{
+    margin-top: 35px;
+    width: 100%;
+    border-top: 3px solid grey;
+    border-bottom: 3px solid grey;
+}
+.main h4, .right h4{
+    font-size: 25px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.items{
+    width: 86%;
+    margin-left: 7%;
+    color: #CA8217;
+}
+
+#back{
+    padding-top: 10px;
+    cursor: pointer;
+}
+
+.roll{
+    width: 40%;
+    float: left;
+    padding-right: 5%;
+}
+
+.roll img{
+    width: 100%;
+}
+.ingredient p{
+    font-weight: lighter;
+}
+
+/*-----right-----*/
+.items > p{
+    text-align: right;
+    margin-top: 0;
+    font-family: Geomanist-italic;
+    font-weight: lighter;
+    color: #823705;
+}
+
+.description{
+    width: 55%;
+    float: left;
+    font-weight: lighter;
+    font-size: 15px;
+}
+.description > p, .ingredient p{
+    margin-top:0;
+    font-family: Geomanist-regular;
+    font-size: 14px;
+    color: #823705;
+}
+.description span{
+    width: 100%;
+    clear: both;
+    float: left;
+}
+
+.description span, .description > div > p, #total{
+    font-size: 20px;
+    font-family: Geomanist-bold;
+    margin-bottom: 5px;
+}
+
+.description span > b{
+    padding-left: 25px;
+    color: #823705;
+}
+
+/*---------------------------
+ *        Cart Button
+ *---------------------------*/
+#total{
+    clear: both;
+}
+
+#total > b{
+    padding-left: 15px;
+    color: #823700;
+}
+
+.bcart{
+    float: right;
+    clear: right;
+    border-radius: 5px;
+    border: 2px solid #D39B49;
+    color: #CA8217;
+    padding: 10px 20px;
+    font-size: 17px;
+    margin-bottom: 15px;
+    font-family: Geomanist-bold;
+    cursor: pointer;
+}
+
+/*-----------------------------------------
+ *     Selector (implemented as button)
+ *-----------------------------------------*/
+.glazing{
+    float: left;
+    clear: left;
+    width: 50%;
+}
+
+.count{
+    float: left;
+    width: 50%;
+    margin-bottom: 30px;
+}
+
+.drop {
+    color: #CA8217;
+    padding: 8px 8px 8px 12px;
+    font-size: 16px;
+    border: 1px solid #BDBDBD;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 200px;
+    text-align: left;
+}
+
+.drop:hover, .drop:focus {
+    box-shadow: 0 0 5px #CA8217;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-sub {
+    display: none;
+    position: absolute;
+    border-radius: 5px 5px 5px 5px;
+    min-width: 200px;
+    z-index: 1;
+    background: white;
+    border: 1px solid rgba(0,0,0,0.2);
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    font-weight: normal;
+    list-style: none;
+}
+
+.dropdown-sub a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-family: Geomanist-italic;
+    font-size: 14px;
+    color: #CA8217;
+}
+
+.show {
+    display:block;
+}
+
+.dropdown::after {
+    content: "";
+    width: 0;
+    height: 45px;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    margin-top: -3px;
+    pointer-events: none;
+    border-width: 6px 6px 0 6px;
+    border-style: solid;
+    border-color: #fff transparent;
+}
+
+.dropdown::before { /* cover */
+    width: 2.5em;
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    pointer-events: none;
+    bottom: 0;
+    border-radius: 0 5px 5px 0;
+    border-color: #DDA34E;
+    background-color: #E6B875;
+}
+
+.dropdown-sub:after {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    bottom: 100%;
+    right: 15px;
+    border-width: 0 6px 6px 6px;
+    border-style: solid;
+    border-color: #fff transparent;
+}
+
+.dropdown-sub a:hover, .dropdown-sub a:focus{
+    background-color: #FFF9F1;
+    cursor: pointer;
+    /*border-radius: 0 5px 5px 0;*/
+}
+
+.dropdown-sub:before {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    bottom: 100%;
+    right: 13px;
+    border-width: 0 8px 8px 8px;
+    border-style: solid;
+    border-color: #d0d0d0 transparent;
+}
+
+/*-----------------------
+ *    Confirmation
+ *----------------------*/
+
+.added{
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.confirmation{
+    position: absolute;
+    width: 50%;
+    height: 40%;
+    min-height: 230px;
+    left: 25%;
+    top: 30%;
+    background-color: #fff;
+}
+
+.left{
+    position: absolute;
+    display: table;
+    top: 0;
+    left: 0;
+    width: 40%;
+    height: 100%;
+ }
+
+.middle{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.left > div > img, .inner {
+    margin-left: 10%;
+    margin-right: auto;
+    width: 90%;
+}
+
+.right{
+    position: absolute;
+    display: table;
+    top: 0;
+    left: 45%;
+    width: 55%;
+    height: 100%;
+    color: #CA8217;
+}
+
+
+.right p, .check{
+    font-size: 16px;
+    font-weight: lighter;
+    font-family: Geomanist-italic;
+}
+
+.check p{
+    color: #7DD44B;
+    padding-top: 10px;
+    padding-left: 50px;
+    padding-bottom: 10px;
+}
+
+.check svg{
+    position: absolute;
+    left:10px;
+}
+
+.buttons button{
+    font-size: 13px;
+    border-radius: 5px;
+    font-weight: 700;
+    width: 100px;
+    height: 48px;
+    cursor: pointer;
+}
+
+.buttons button:first-of-type{
+    color: #7DD44B;
+    border: 2px solid #7DD44B;
+}
+
+.buttons button:nth-child(2) {
+    float: left;
+    margin-right: 15px;
+    border: 2px solid #BDBDBD;
+    color: #BDBDBD;
+}
+
+/*--------------------------
+ *    simple media query
+ *--------------------------*/
+
+@media (max-width:991px){
+    .glazing{
+        width: 100%;
+        clear: both;
+    }
+
+    .count{
+        width: 100%;
+        clear: both;
+    }
+
+    .total{
+        width: 100%;
+        clear:both;
+    }
+
+    .right h4{
+        font-size: 18px;
+    }
+
+    .right p{
+        font-size: 13px;
+    }
+
+    .buttons button{
+        margin-bottom: 5px;
+        height: 38px;
+    }
+
+    .check svg{
+        left: 0;
+    }
+}
+
+

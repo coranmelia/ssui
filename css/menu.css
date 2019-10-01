@@ -1,0 +1,80 @@
+/*---------------------
+ *        Menu
+ *---------------------*/
+
+.main{
+    margin-top: 35px;
+    width: 100%;
+    border-top: 3px solid grey;
+    border-bottom: 3px solid grey;
+}
+
+.items{
+    width: 86%;
+    margin-left: 7%;
+}
+
+.instruction h4, .rolls h4, .instruction a{
+    color: #CA8217;
+    /*text-decoration: none;*/
+}
+
+.instruction p{
+    line-height: 1.5em;
+    font-size: 13px;
+    color: #643F08;
+    font-weight: lighter;
+    font-family: Geomanist-regular;
+}
+.instruction b{
+    font-family: Geomanist-bold;
+}
+
+.rolls .roll{
+    position: relative;
+    display: block;
+    width: 33%;
+    float: left;
+}
+
+.rolls img{
+    position: relative;
+    display: inline-block;
+    width: 90%;
+    margin-left: 5%;
+}
+
+.rolls .roll p{
+    text-align: center;
+    color: #823705;
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+.rolls > p{
+    font-size: 2px;
+    font-family: Geomanist-thin;
+    text-align: right;
+}
+
+.rolls img:hover{
+    box-shadow: 0 0 15px gold;
+    cursor: pointer;
+}
+
+/*--------------------------
+ *    simple media query
+ *--------------------------*/
+
+@media (max-width: 768px) and (min-width: 576px){
+    .rolls .roll{
+        width: 50%;
+    }
+}
+
+@media (max-width: 576px){
+    .rolls .roll{
+        width: 100%;
+    }
+}

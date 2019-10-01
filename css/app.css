@@ -1,0 +1,150 @@
+/***************************************
+ * Color Code
+ *
+ * text: #4F4F4F;
+ * hover: #CA8217;
+ * paragraph: #643F08;
+ * product name tag: #823705;
+ * background: #fff;
+ * font family: Geomanist;
+ ***************************************/
+
+@font-face {
+    font-family: Geomanist-regular;
+    src: url(../css/font/Geomanist-Regular-Webfont/geomanist-regular-webfont.woff);
+}
+@font-face {
+    font-family: Geomanist-bold;
+    src: url(../css/font/Geomanist-Bold-Webfont/geomanist-bold-webfont.woff);
+}
+@font-face {
+    font-family: Geomanist-italic;
+    src: url(../css/font/Geomanist-Regular-Italic-Webfont/geomanist-regular-italic-webfont.woff);
+}
+@font-face {
+    font-family: Geomanist-thin;
+    src: url(../css/font/Geomanist-Thin-Webfont/geomanist-thin-webfont.woff);
+}
+
+body {
+    width: 90%;
+    margin-left: 5%;
+    font-family : Geomanist-bold;
+    font-size   : 18px;
+    color       : #4F4F4F;
+    font-weight : bold;
+    background  : #ffffff;
+    box-shadow: 0 9px 0px 0px white,  /* top */
+    0 -9px 0px 0px white,  /* bottom */
+    12px 0 30px -4px rgba(0, 0,0, 0.3),  /* left */
+    -12px 0 30px -4px rgba(0, 0, 0, 0.3);   /* right */
+}
+
+
+/*---------*
+ *   nav
+ *---------*/
+.navbar{
+    width: 100%;
+}
+
+.menu{
+    width: 100%;
+    margin-left: 3%;
+    display: table;
+    table-layout: fixed;
+}
+
+.menu-item{
+    display: table-cell;
+    text-align: center;
+    padding-top: 30px;
+    line-height: 55px;
+    text-decoration: none;
+    color: #4F4F4F;
+}
+
+.logo > img{
+    position: absolute;
+    left: 48%;
+    padding-top: 0px;
+}
+
+.other{
+    float: right;
+    padding-right: 2%;
+}
+
+.icon{
+    padding-left: 15px;
+}
+
+.menu-item span:hover{
+    color: #CA8217;
+    text-decoration: none;
+    border-bottom: 3px solid #CA8217;
+}
+
+.onload{
+    color: #CA8217;
+    text-decoration: none;
+    border-bottom: 3px solid #CA8217;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.num{
+    display: none;
+}
+/*---------------*
+ *     footer
+ *---------------*/
+
+.footer{
+    width: 100%;
+    display: inline-block;
+}
+
+.col-4{
+    width: 33%;
+    float: left;
+}
+
+
+.col-4 h4, .col-4 h6, .col-4 p{
+    padding-left: 50px;
+}
+
+.col-4 h4{
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.col-4 h6, .col-4 p{
+    margin: 0;
+}
+
+.col-4 p{
+    font-family: Geomanist-regular;
+    font-size: 9px;
+    font-weight: lighter;
+    width: 70%;
+}
+
+/*--------------------------
+ *    simple media query
+ *--------------------------*/
+
+@media (max-width: 768px){
+    .menu-item{
+        font-size: 12px;
+    }
+
+    .logo > img{
+        margin-top: 30px;
+        width: 50px;
+    }
+
+}

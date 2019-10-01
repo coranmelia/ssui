@@ -1,0 +1,56 @@
+
+/*--------------*
+ *     main
+ *--------------*/
+.jumb{
+    width: 100%;
+    position: relative;
+}
+.jumb > img{
+    width: 100%;
+    opacity: 0.8;
+    /*margin-left: 5%;*/
+    border-top: 3px solid grey;
+    border-bottom: 3px solid grey;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+.ad{
+    position: absolute;
+    top: 10%;
+    left: 7%;
+    width: 25%;
+    line-height: 1.8em;
+    font-size: 23px;
+}
+.button {
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+    background-color: rgba(0,0,0,0.2); /* Green */
+    border: 2px solid white;
+    color: white;
+    padding: 25px 42px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    border-radius: 12px;
+}
+
+.button:hover{
+    background-color: rgba(150,150,150,0.3);
+    cursor: pointer;
+}
+
+/*--------------------------
+ *    simple media query
+ *--------------------------*/
+
+@media (max-width: 768px){
+.ad{
+    font-size: 17px;
+    line-height: 1.2em;
+}
+}
