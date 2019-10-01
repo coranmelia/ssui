@@ -6,6 +6,7 @@
     var homeHtml = "./snippet/Home.html";
     var MenuHtml = "./snippet/menu.html";
     var DetailHtml = "./snippet/detail.html";
+    var main = document.querySelector("#main-content");
 
 // inserting innerHTML for select
     var insertHtml = function (selector, html) {
@@ -17,7 +18,6 @@
     var showLoading = function (selector) {
         var html = "<div class='text-center'>";
         html += "<img src='./css/img/preloader.gif'></div>";
-        insertHtml(selector, html);
     };
 
 // On page load
@@ -30,7 +30,9 @@
             // call server
             $ajaxUtils.sendGetRequest(homeHtml,
                 function (responseText) {
-                    document.querySelector("#main-content").innerHTML = responseText;
+                    main.innerHTML = responseText;
+                    var url="./index.html";
+                    history.pushState("./snippet/Home.html",null, url);
                 },
                 false);
 
@@ -43,25 +45,31 @@
         $ajaxUtils.sendGetRequest(
             homeHtml,
             function (responseText) {
-                document.querySelector("#main-content").innerHTML = responseText;
+                main.innerHTML = responseText;
+                var url="./index.html";
+                history.pushState("./snippet/Home.html",null, url);
             },
             false);
 
         $("span").removeClass("onload");
         $( ".home span" ).addClass( "onload" );
+
+
     };
 
-    dc.loadMenu= function (){
-        showLoading("#main-content");
-        $ajaxUtils.sendGetRequest(
-            MenuHtml,
-            function (responseText) {
-                document.querySelector("#main-content").innerHTML = responseText;
-            },
-            false);
+    dc.loadMenu= function (e){
+            showLoading("#main-content");
+            $ajaxUtils.sendGetRequest(
+                MenuHtml,
+                function (responseText) {
+                    main.innerHTML = responseText;
+                    var url="menu.html";
+                    history.pushState("./snippet/menu.html",null, url);
+                },
+                false);
 
-        $("span").removeClass("onload");
-        $( ".navmenu span" ).addClass( "onload" );
+            $("span").removeClass("onload");
+            $(".navmenu span").addClass("onload");
 
     };
 
@@ -70,11 +78,35 @@
         $ajaxUtils.sendGetRequest(
             DetailHtml,
             function (responseText) {
-                document.querySelector("#main-content").innerHTML = responseText;
+                main.innerHTML = responseText;
+                var url="detail.html";
+                history.pushState("./snippet/detail.html",null, url);
             },
             false);
+
     };
+
+    window.addEventListener('popstate',
+    function(e){
+        var character = e.state;
+        if(character == null){
+            $ajaxUtils.sendGetRequest(homeHtml,
+                function (responseText) {
+                    main.innerHTML = responseText;
+                },
+                false);
+        } else {
+            $ajaxUtils.sendGetRequest(
+                character,
+                function (responseText) {
+                    main.innerHTML = responseText;
+                },
+                false);
+        }
+    });
+
     global.$dc = dc;
+
 
 })(window);
 

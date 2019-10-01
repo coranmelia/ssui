@@ -12,12 +12,12 @@
     <!-- navbar -->
     <div class="navbar">
         <div class = "menu">
-            <a class="menu-item home" href="#" onclick="$dc.loadHome();"><span> HOME</span></a>
-            <a class="menu-item" href="#"><span> ABOUT</span></a>
-            <a class="menu-item navmenu" href="#" onclick="$dc.loadMenu();"><span> MENU</span></a>
-            <a class="logo" href="./Index.html"><img src="./css/svg/logo.svg"></a>
-            <a class="menu-item" href="#"><span> LOCATION</span></a>
-            <a class="menu-item" href="#"><span> CONTACT</span></a>
+            <a class="menu-item home" data-name="index" onclick="$dc.loadHome(this);"><span data-name="index"> HOME</span></a>
+            <a class="menu-item" data-name="about"><span> ABOUT</span></a>
+            <a class="menu-item navmenu" data-name="menu" onclick="$dc.loadMenu(this);"><span data-name="menu"> MENU</span></a>
+            <a class="logo" href="./index.html"><img src="./css/svg/logo.svg" data-name="index"></a>
+            <a class="menu-item" data-name="location"><span> LOCATION</span></a>
+            <a class="menu-item" data-name="contact"><span> CONTACT</span></a>
             <a class="dummy"></a>
         </div>
         <div class = "other">
