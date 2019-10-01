@@ -3,9 +3,9 @@
     var dc = {};
 
 // List URL's
-    var homeHtml = "./ssui/snippet/Home.html";
-    var MenuHtml = "./ssui/snippet/menu.html";
-    var DetailHtml = "./ssui/snippet/detail.html";
+    var homeHtml = "./snippet/Home.html";
+    var MenuHtml = "./snippet/menu.html";
+    var DetailHtml = "./snippet/detail.html";
 
 // inserting innerHTML for select
     var insertHtml = function (selector, html) {
