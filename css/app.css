@@ -64,6 +64,10 @@ body {
     color: #4F4F4F;
 }
 
+.menu-item span{
+    cursor: pointer;
+}
+
 .logo > img{
     position: absolute;
     left: 48%;
@@ -114,7 +118,7 @@ body {
 
 
 .col-4 h4, .col-4 h6, .col-4 p{
-    padding-left: 50px;
+    padding-left: 70px;
 }
 
 .col-4 h4{
@@ -123,7 +127,9 @@ body {
 }
 
 .col-4 h6, .col-4 p{
-    margin: 0;
+    margin-bottom: 5px;
+    margin-left: 0;
+    margin-top: 0;
 }
 
 .col-4 p{
@@ -132,6 +138,7 @@ body {
     font-weight: lighter;
     width: 70%;
 }
+
 
 /*--------------------------
  *    simple media query

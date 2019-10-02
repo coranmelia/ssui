@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bun Bun Home</title>
     <link rel="stylesheet" href="css/app.css">
 </head>
@@ -12,12 +12,12 @@
     <!-- navbar -->
     <div class="navbar">
         <div class = "menu">
-            <a class="menu-item home" data-name="index" onclick="$dc.loadHome(this);"><span data-name="index"> HOME</span></a>
-            <a class="menu-item" data-name="about"><span> ABOUT</span></a>
-            <a class="menu-item navmenu" data-name="menu" onclick="$dc.loadMenu(this);"><span data-name="menu"> MENU</span></a>
-            <a class="logo" href="./index.html"><img src="./css/svg/logo.svg" data-name="index"></a>
-            <a class="menu-item" data-name="location"><span> LOCATION</span></a>
-            <a class="menu-item" data-name="contact"><span> CONTACT</span></a>
+            <a class="menu-item home" onclick="$dc.loadHome(this);"><span> HOME</span></a>
+            <a class="menu-item"><span> ABOUT</span></a>
+            <a class="menu-item navmenu" onclick="$dc.loadMenu(this);"><span> MENU</span></a>
+            <a class="logo" href="./index.html"><img src="./css/svg/logo.svg" ></a>
+            <a class="menu-item location" onclick="$dc.loadLocation(this);"><span> LOCATION</span></a>
+            <a class="menu-item"><span> CONTACT</span></a>
             <a class="dummy"></a>
         </div>
         <div class = "other">
@@ -37,8 +37,9 @@
     <div class="footer">
         <div class = "col-4 hour">
             <h4>HOURS</h4>
-            <p>Monday to Friday: 12:00 - 2:00</p>
-            <p>Saturday and Sunday: 12:00 - 3:00</p>
+            <p>Monday to Friday: 12:00PM - 8:00PM</p>
+            <p>Saturday: 12:00PM - 11:00PM</p>
+            <p>Sunday: 12:00PM - 1:00PM</p>
             <h4>FOR SPECIAL ORDERS</h4>
             <p>Please call 412-888-3888</p>
         </div>

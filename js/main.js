@@ -3,9 +3,10 @@
     var dc = {};
 
 // List URL's
-    var homeHtml = "./snippet/Home.html";
-    var MenuHtml = "./snippet/menu.html";
-    var DetailHtml = "./snippet/detail.html";
+    var homeHtml = "./Home.html";
+    var MenuHtml = "./menu.html";
+    var DetailHtml = "./detail.html";
+    var locationHtml = "./location.html";
     var main = document.querySelector("#main-content");
 
 // inserting innerHTML for select
@@ -18,6 +19,7 @@
     var showLoading = function (selector) {
         var html = "<div class='text-center'>";
         html += "<img src='./css/img/preloader.gif'></div>";
+        insertHtml(selector, html);
     };
 
 // On page load
@@ -26,16 +28,15 @@
 
             // First load, show home view
             showLoading("#main-content");
-
             // call server
             $ajaxUtils.sendGetRequest(homeHtml,
                 function (responseText) {
                     main.innerHTML = responseText;
                     var url="./index.html";
-                    history.pushState("./snippet/Home.html",null, url);
+                    history.pushState("./Home.html",null, url);
                 },
                 false);
-
+            // add highlight to menu item HOME
             $( ".home span" ).addClass( "onload" );
 
         });
@@ -47,27 +48,27 @@
             function (responseText) {
                 main.innerHTML = responseText;
                 var url="./index.html";
-                history.pushState("./snippet/Home.html",null, url);
+                history.pushState("./Home.html",null, url);
             },
             false);
-
+        // remove any highlight and add to HOME
         $("span").removeClass("onload");
         $( ".home span" ).addClass( "onload" );
 
 
     };
 
-    dc.loadMenu= function (e){
+    dc.loadMenu= function (){
             showLoading("#main-content");
             $ajaxUtils.sendGetRequest(
                 MenuHtml,
                 function (responseText) {
                     main.innerHTML = responseText;
-                    var url="menu.html";
-                    history.pushState("./snippet/menu.html",null, url);
+                    var url="index.html";
+                    history.pushState("./menu.html",null, url);
                 },
                 false);
-
+            // remove any highlight and add to MENU
             $("span").removeClass("onload");
             $(".navmenu span").addClass("onload");
 
@@ -79,30 +80,56 @@
             DetailHtml,
             function (responseText) {
                 main.innerHTML = responseText;
-                var url="detail.html";
-                history.pushState("./snippet/detail.html",null, url);
+                var url="index.html";
+                history.pushState("./detail.html",null, url);
             },
             false);
 
     };
 
+    dc.loadLocation= function (){
+        showLoading("#main-content");
+        $ajaxUtils.sendGetRequest(
+            locationHtml,
+            function (responseText) {
+                main.innerHTML = responseText;
+                var url="index.html";
+                history.pushState("./location.html",null, url);
+            },
+            false);
+
+        $("span").removeClass("onload");
+        $(".location span").addClass("onload");
+    };
+
     window.addEventListener('popstate',
-    function(e){
-        var character = e.state;
-        if(character == null){
-            $ajaxUtils.sendGetRequest(homeHtml,
-                function (responseText) {
-                    main.innerHTML = responseText;
-                },
-                false);
-        } else {
-            $ajaxUtils.sendGetRequest(
-                character,
-                function (responseText) {
-                    main.innerHTML = responseText;
-                },
-                false);
-        }
+        function(e){
+            var character = e.state;
+            if(character == null){
+                $ajaxUtils.sendGetRequest(homeHtml,
+                    function (responseText) {
+                        main.innerHTML = responseText;
+                    },
+                    false);
+            } else {
+                $ajaxUtils.sendGetRequest(
+                    character,
+                    function (responseText) {
+                        main.innerHTML = responseText;
+                    },
+                    false);
+
+                $("span").removeClass("onload");
+                if(character === MenuHtml || character === DetailHtml) {
+                    $(".navmenu span").addClass("onload");
+                }
+                if(character === homeHtml){
+                    $( ".home span" ).addClass( "onload" );
+                }
+                if(character === locationHtml){
+                    $( ".location span" ).addClass( "onload" );
+                }
+            }
     });
 
     global.$dc = dc;
