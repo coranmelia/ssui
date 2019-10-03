@@ -12,9 +12,5 @@ Site Map
 1. Home
 2. Menu
 3. Product Detail
-4. Store Location (extra)
+4. Store Location (extra implementation)
 ```
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
