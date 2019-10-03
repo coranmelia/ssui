@@ -3,26 +3,28 @@
     var dc = {};
 
 // List URL's
-    var homeHtml = "./Home.html";
-    var MenuHtml = "./menu.html";
-    var DetailHtml = "./detail.html";
-    var locationHtml = "./location.html";
-    var main = document.querySelector("#main-content");
+    let homeHtml = "./Home.html";
+    let MenuHtml = "./menu.html";
+    let DetailHtml = "./detail.html";
+    let locationHtml = "./location.html";
+    let main = document.querySelector("#main-content");
 
 // inserting innerHTML for select
-    var insertHtml = function (selector, html) {
+    let insertHtml = function (selector, html) {
         var targetElem = document.querySelector(selector);
         targetElem.innerHTML = html;
     };
 
 // Show loading icon inside element identified by selector
-    var showLoading = function (selector) {
+    let showLoading = function (selector) {
         var html = "<div class='text-center'>";
         html += "<img src='./css/img/preloader.gif'></div>";
         insertHtml(selector, html);
     };
 
 // On page load
+
+    // default load
     document.addEventListener("DOMContentLoaded",
         function (event) {
 
@@ -32,7 +34,7 @@
             $ajaxUtils.sendGetRequest(homeHtml,
                 function (responseText) {
                     main.innerHTML = responseText;
-                    var url="./index.html";
+                    let url="./index.html";
                     history.pushState("./Home.html",null, url);
                 },
                 false);
@@ -41,13 +43,15 @@
 
         });
 
+    // home load
     dc.loadHome = function (){
         showLoading("#main-content");
         $ajaxUtils.sendGetRequest(
             homeHtml,
             function (responseText) {
                 main.innerHTML = responseText;
-                var url="./index.html";
+                let url="./index.html";
+                // push the state to history
                 history.pushState("./Home.html",null, url);
             },
             false);
@@ -58,13 +62,15 @@
 
     };
 
+    // menu load
     dc.loadMenu= function (){
             showLoading("#main-content");
             $ajaxUtils.sendGetRequest(
                 MenuHtml,
                 function (responseText) {
                     main.innerHTML = responseText;
-                    var url="index.html";
+                    let url="index.html";
+                    // push the state to history
                     history.pushState("./menu.html",null, url);
                 },
                 false);
@@ -74,37 +80,43 @@
 
     };
 
+    // detail load
     dc.loadDetail= function (){
         showLoading("#main-content");
         $ajaxUtils.sendGetRequest(
             DetailHtml,
             function (responseText) {
                 main.innerHTML = responseText;
-                var url="index.html";
+                let url="index.html";
+                // push the state to history
                 history.pushState("./detail.html",null, url);
             },
             false);
 
     };
 
+    // location load
     dc.loadLocation= function (){
         showLoading("#main-content");
         $ajaxUtils.sendGetRequest(
             locationHtml,
             function (responseText) {
                 main.innerHTML = responseText;
-                var url="index.html";
+                let url="index.html";
+                // push the state to history
                 history.pushState("./location.html",null, url);
             },
             false);
 
+        // reset menu item highlight to LOCATION
         $("span").removeClass("onload");
         $(".location span").addClass("onload");
     };
 
+    // pop state from history
     window.addEventListener('popstate',
         function(e){
-            var character = e.state;
+            let character = e.state;
             if(character == null){
                 $ajaxUtils.sendGetRequest(homeHtml,
                     function (responseText) {
@@ -119,6 +131,7 @@
                     },
                     false);
 
+                // reset menu item highlight
                 $("span").removeClass("onload");
                 if(character === MenuHtml || character === DetailHtml) {
                     $(".navmenu span").addClass("onload");
@@ -137,7 +150,7 @@
 
 })(window);
 
-// other functions such as toggle dropdown menu
+/* other functions such as toggle dropdown menu */
 $(document).ready()
 {
     // glazing dropdown menu
@@ -146,7 +159,7 @@ $(document).ready()
 
         // change text in parent menu and calculate total if both count and glazing have been selected
         $("#gmenu a").on("click", function () {
-            var x = this.innerHTML;
+            let x = this.innerHTML;
             $(".glazing .drop").html(x);
 
             if($(".count .drop").html() != 'Choose Pack Size') {
@@ -162,7 +175,7 @@ $(document).ready()
 
         // change text in parent menu and calculate total if both count and glazing have been selected
         $("#cmenu a").on("click", function () {
-            var x = parseInt(this.innerHTML);
+            let x = parseInt(this.innerHTML);
             $(".count .drop").html(x);
             if($(".glazing .drop").html() != 'Choose Glazing') {
                 $("#total > b").html("$" + (x * 3.95).toFixed(2));
@@ -170,13 +183,13 @@ $(document).ready()
         });
     };
 
-    // Close dropdown menu if click other places
+    // Collapse dropdown menu if clicks elsewhere
     window.onclick = function (event) {
         if (!event.target.matches('.drop')) {
-            var dp = document.getElementsByClassName("dropdown-sub");
-            var i;
+            let dp = document.getElementsByClassName("dropdown-sub");
+            let i;
             for (i = 0; i < dp.length; i++) {
-                var openDropdown = dp[i];
+                let openDropdown = dp[i];
                 if (openDropdown.classList.contains('show')) {
                     openDropdown.classList.remove('show');
                 }
@@ -184,16 +197,20 @@ $(document).ready()
         }
     }
 
+    /* function to add an item to cart */
     function addtocart() {
-        var g = $(".glazing .drop").html();
-        var c = parseInt($(".count .drop").html());
+        let g = $(".glazing .drop").html();
+        let c = parseInt($(".count .drop").html());
+
+        // both glazing and count need to be selected in order to add item to cart
         if(g != 'Choose Glazing' && $.isNumeric(c)) {
-            // alert(c);
             $("#detail").html("Glazing: " + g + " ........... x " + c);
+            $("#err1, #err2").hide();
             $(".added").show();
             $(".num").show();
-        } else {
-            alert("Please fill out your glazing and your pack size!");
+        }else {
+            // if either field has not been selected, show error message
+            $("#err1").show();
         }
     }
 

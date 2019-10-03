@@ -1,37 +1,20 @@
-## Welcome to GitHub Pages
+## Welcome to Bun Bun Bake Shop
 
-You can use the [editor on GitHub](https://github.com/coranmelia/ssui/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+You can access the [homepage](https://coranmelia.github.io/ssui/index.html) of our shop and make online orders of our signature Cinnamon rolls!
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Customers can enter [homepage](https://coranmelia.github.io/ssui/index.html) and use the overhead navigation bar or the ORDER NOW button to access our menu, and select products accordingly. 
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+Please use Chrome for better user experience. 
 
 ```markdown
-Syntax highlighted code block
+Site Map
 
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
+1. Home
+2. Menu
+3. Product Detail
+4. Store Location (extra)
+```
 
 **Bold** and _Italic_ and `Code` text
 
 [Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/coranmelia/ssui/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.

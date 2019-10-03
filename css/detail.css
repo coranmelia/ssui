@@ -68,14 +68,18 @@
 }
 .description span{
     width: 100%;
+    font-size: 19px;
     clear: both;
     float: left;
 }
 
-.description span, .description > div > p, #total{
+b{
+    font-family: Geomanist-bold;
+}
+ .description > div > p, #total{
     font-size: 20px;
     font-family: Geomanist-bold;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
 }
 
 .description span > b{
@@ -93,6 +97,10 @@
 #total > b{
     padding-left: 15px;
     color: #823700;
+}
+
+button{
+    background-color: #fff;
 }
 
 .bcart{
@@ -125,11 +133,13 @@
 
 .drop {
     color: #CA8217;
+    height: 35px;
     padding: 8px 8px 8px 12px;
     font-size: 16px;
     border: 1px solid #BDBDBD;
     border-radius: 5px;
     cursor: pointer;
+    /*background-color: #fff;*/
     width: 200px;
     text-align: left;
 }
@@ -230,6 +240,12 @@
 /*-----------------------
  *    Confirmation
  *----------------------*/
+#err1{
+    display: none;
+    font-family: Geomanist-italic;
+    color: red;
+    padding-bottom: 10px;
+}
 
 .added{
     display: none;
