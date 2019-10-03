@@ -208,6 +208,8 @@ $(document).ready()
             $("#err1, #err2").hide();
             $(".added").show();
             $(".num").show();
+            let cNum = parseInt($(".num text").html())+1;
+            $(".num text").html(cNum);
         }else {
             // if either field has not been selected, show error message
             $("#err1").show();

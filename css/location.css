@@ -1,6 +1,8 @@
-
+/*-----------------
+ *  Location page
+ *----------------*/
 .main{
-    margin-top: 35px;
+    /*margin-top: 35px;*/
     width: 100%;
     border-top: 3px solid grey;
     border-bottom: 3px solid grey;
@@ -14,20 +16,14 @@
 }
 .title {
     margin-left: 7%;
+    margin-top: 20px;
 }
 
 .container{
     width: 100%;
-    margin-top: 20px;
 }
 
-.info{
-    float: left;
-    width: 25%;
-    margin-left: 7%;
-}
-
-p{
+.main p{
     font-size: 10px;
     margin: 0 0 3px 0;
     color: #643F08;
@@ -35,6 +31,14 @@ p{
     font-weight: lighter;
 }
 
+/*------left------*/
+.info{
+    float: left;
+    width: 25%;
+    margin-left: 7%;
+}
+
+/*------right------*/
 .map{
     width: 68%;
     float: left;
@@ -47,12 +51,9 @@ p{
     margin-left: 0;
 }
 
+/*------bottom------*/
 .direction{
     clear: both;
     margin-left: 7%;
     margin-bottom: 40px;
 }
-
-/*.direction p{*/
-/*    font-family: Geomanist-bold;*/
-/*}*/

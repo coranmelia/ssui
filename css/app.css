@@ -81,6 +81,7 @@ body {
 
 .icon{
     padding-left: 15px;
+    cursor: pointer;
 }
 
 .menu-item span:hover{
@@ -97,10 +98,12 @@ body {
 
 .text-center{
     text-align: center;
+    z-index: 10;
 }
 
 .num{
     display: none;
+    cursor: pointer;
 }
 /*---------------*
  *     footer

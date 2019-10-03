@@ -1,7 +1,6 @@
-/* -------------------------
- * Menu items
- * Content hover: FFF9F1;
- *--------------------------*/
+/* --------------------------------------------
+ * Glazing/Count Submenu hover/focus: #FFF9F1;
+ *---------------------------------------------*/
 
 
 /*------------------
@@ -10,7 +9,7 @@
 
 /*-----left-----*/
 .main{
-    margin-top: 35px;
+    /*margin-top: 35px;*/
     width: 100%;
     border-top: 3px solid grey;
     border-bottom: 3px solid grey;
@@ -76,6 +75,7 @@
 b{
     font-family: Geomanist-bold;
 }
+
  .description > div > p, #total{
     font-size: 20px;
     font-family: Geomanist-bold;
@@ -139,7 +139,6 @@ button{
     border: 1px solid #BDBDBD;
     border-radius: 5px;
     cursor: pointer;
-    /*background-color: #fff;*/
     width: 200px;
     text-align: left;
 }
@@ -260,7 +259,7 @@ button{
 .confirmation{
     position: absolute;
     width: 50%;
-    height: 40%;
+    height: 50%;
     min-height: 230px;
     left: 25%;
     top: 30%;
